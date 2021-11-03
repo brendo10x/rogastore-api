@@ -1,4 +1,4 @@
-package rogalabs.com.rogastoreapi;
+package rogalabs.com.rogastore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
