@@ -1,4 +1,4 @@
-package rogalabs.com.rogastoreapi.domain.model;
+package rogalabs.com.rogastore.domain.model;
   
 import javax.persistence.Entity;
 import javax.persistence.Table;
