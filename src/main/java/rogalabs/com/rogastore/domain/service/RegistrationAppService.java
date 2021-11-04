@@ -11,7 +11,7 @@ import rogalabs.com.rogastore.domain.model.App;
 import rogalabs.com.rogastore.domain.repository.AppRepository;
 
 @Service
-public class CadastroAppService {
+public class RegistrationAppService {
 
 	@Autowired
 	private AppRepository appRepository;

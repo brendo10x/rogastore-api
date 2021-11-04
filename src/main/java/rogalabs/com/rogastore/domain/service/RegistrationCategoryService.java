@@ -14,7 +14,7 @@ import rogalabs.com.rogastore.domain.model.Category;
 import rogalabs.com.rogastore.domain.repository.CategoryRepository;
 
 @Service
-public class CadastroCategoryService {
+public class RegistrationCategoryService {
 
 	private static final String MSG_CATEGORY_IN_USE = "Code %d category cannot be removed as it is in use";
 
