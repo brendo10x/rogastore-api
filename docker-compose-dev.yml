@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:13.1
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - APP_DB_USER=rogastore
+      - APP_DB_PASS=rogastore
+      - APP_DB_NAME=rogastore
+    volumes:
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d/
+    ports:
+      - 3000:5432
