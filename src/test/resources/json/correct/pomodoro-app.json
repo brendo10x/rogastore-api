@@ -1,0 +1,8 @@
+{
+  "name": "Gostei",
+  "description": "Pomodoro Technique App",
+  "price": "2.00",
+  "category":{
+      "id": 2
+  }
+}

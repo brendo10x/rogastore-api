@@ -1,10 +1,23 @@
 version: '3'
 
 services:
+  app:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: app/api
+    ports:
+      - '8080:8080'
+      - '5005:5005'
+    environment:
+      - ADDITIONAL_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Xmx1G -Xms128m -XX:MaxMetaspaceSize=128m
+      - PROFILE=dev
+    links:
+      - postgres
   postgres:
     image: postgres:13.1
     healthcheck:
-      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "postgres" ]
       timeout: 45s
       interval: 10s
       retries: 10
