@@ -1,5 +1,6 @@
 package rogalabs.com.rogastore.domain.service;
 
+ 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -13,21 +14,32 @@ import rogalabs.com.rogastore.domain.exception.EntityInUseException;
 import rogalabs.com.rogastore.domain.model.Category;
 import rogalabs.com.rogastore.domain.repository.CategoryRepository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 @Service
-public class RegistrationCategoryService {
+public class CategoryService {
 
 	private static final String MSG_CATEGORY_IN_USE = "Code %d category cannot be removed as it is in use";
 
 	@Autowired
 	private CategoryRepository categoryRepository;
 
+	public Category findCategoryById(Long categoryId) {
+		return categoryRepository.findById(categoryId).orElseThrow(() -> new CategoryNotFoundException(categoryId));
+	}
+
+	public Page<Category> findAllCategories(Pageable pageable) {
+		return categoryRepository.findAll(pageable);
+	}
+
 	@Transactional
-	public Category save(Category category) {
+	public Category saveCategory(Category category) {
 		return categoryRepository.save(category);
 	}
 
 	@Transactional
-	public void delete(Long categoryId) {
+	public void deleteCategory(Long categoryId) {
 		try {
 
 			categoryRepository.deleteById(categoryId);
@@ -41,8 +53,4 @@ public class RegistrationCategoryService {
 		}
 	}
 
-	@Transactional
-	public Category seekOrFail(Long categoryId) {
-		return categoryRepository.findById(categoryId).orElseThrow(() -> new CategoryNotFoundException(categoryId));
-	}
 }
