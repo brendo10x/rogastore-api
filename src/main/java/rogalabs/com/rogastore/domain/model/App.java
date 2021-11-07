@@ -9,40 +9,41 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne; 
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Builder
 @Entity
-@Table(name = "tb_app") 
+@Table(name = "tb_app")
 public class App implements Serializable {
-	 
+
 	private static final long serialVersionUID = 1L;
-	
-	@EqualsAndHashCode.Include
+
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tb_app_id_seq")
+	@SequenceGenerator(name = "tb_app_id_seq", sequenceName = "tb_app_id_seq", allocationSize = 1)
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(nullable = false)
 	private String name;
-	
+
 	@Column(nullable = true)
 	private String description;
-	
+
 	@Column(nullable = false)
 	private BigDecimal price;
- 
+
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(name = "category_id", nullable = false)
 	private Category category;
 
 }
