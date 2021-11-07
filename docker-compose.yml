@@ -21,8 +21,6 @@ services:
       - POSTGRES_PASSWORD=postgres
       - APP_DB_USER=rogastore
       - APP_DB_PASS=rogastore
-      - APP_DB_NAME=rogastore
-    volumes:
-      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d/
+      - APP_DB_NAME=postgres
     ports:
-      - 5432:5432
+      - 5000:5432

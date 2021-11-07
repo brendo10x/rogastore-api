@@ -8,4 +8,4 @@ SHELL ["/bin/sh", "-c"]
 
 EXPOSE 8080
 
-CMD java -jar app_store_api.jar
+CMD java -jar rogastore-api.jar
