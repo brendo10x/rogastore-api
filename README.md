@@ -66,5 +66,5 @@ http://localhost:8080/api/v1/apps/cheapest-by-category/2
 * Spring Tools Suite
 
 #### Padrões e boas práticas adotados no projeto
-- Padrões de projeto: Strategy, Facade, Singleton, DTO e etc.
+- Padrões de projeto: Strategy, Facade, Singleton, DTO, TDD, BDD e etc.
 - Ágil: Kanban e Pomodoro
