@@ -52,6 +52,7 @@ http://localhost:8080/api/v1/apps/cheapest-by-category/1
 #### Kit de Desenvolvimento
 * Java 11
 * Spring Boot
+* Spring Data JPA
 * Maven
 * PostgreSQL
 * Docker
@@ -60,11 +61,11 @@ http://localhost:8080/api/v1/apps/cheapest-by-category/1
 * JUnit
 * Rest assured
 * Lombok
-* Spring Data JPA
+* Slf4j
 * Swagger2
 * Postman
 * Spring Tools Suite
 
 #### Padrões e boas práticas adotados no projeto
-- Padrões de projeto: Strategy, Facade, Singleton, DTO e etc.
+- Padrões de projeto: Strategy, Facade, Singleton, DTO, SOLID, Clean Code.
 - Ágil: TDD, BDD, Kanban e Pomodoro
