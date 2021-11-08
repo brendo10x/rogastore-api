@@ -45,7 +45,7 @@ http://localhost:8080/api/v1/apps?name=Pomodoro
 ```
 #### Busca de app mais barato por tipo
 ```bash
-http://localhost:8080/api/v1/apps/cheapest-by-category/2
+http://localhost:8080/api/v1/apps/cheapest-by-category/1
 ```
 
 ### Ferramentas utilizadas
