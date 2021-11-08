@@ -41,7 +41,7 @@ http://localhost:8080/api/v1/apps?name=Pomodoro&categoryId=1
 http://localhost:8080/api/v1/apps?categoryId=1
 ```
 ```bash
-http://localhost:8080/api/v1/apps?name=Game
+http://localhost:8080/api/v1/apps?name=Pomodoro
 ```
 #### Busca de app mais barato por tipo
 ```bash
