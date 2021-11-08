@@ -35,10 +35,10 @@ http://localhost:8080/api/v1/apps/
 ```
 #### Busca de aplicativos por nome e tipo
 ```bash
-http://localhost:8080/api/v1/apps?name=Game&categoryId=2
+http://localhost:8080/api/v1/apps?name=Pomodoro&categoryId=1
 ```
 ```bash
-http://localhost:8080/api/v1/apps?categoryId=2
+http://localhost:8080/api/v1/apps?categoryId=1
 ```
 ```bash
 http://localhost:8080/api/v1/apps?name=Game
